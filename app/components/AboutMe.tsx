@@ -5,14 +5,19 @@ const words = ["powerful", "scalable", "efficient"];
 
 export default function AboutMe() {
   return (
-    <div className="relative flex items-center justify-around min-h-screen bg-black px-10 md:px-20" 
-    style={{ backgroundImage: "url('/img/bg-light.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
-      <div className="max-w-lg text-left text-white">
-        <h1 className="text-lg md:text-2xl font-bold">
+    <div
+      className="relative flex flex-col md:flex-row items-center justify-center md:justify-around min-h-screen bg-black px-6 md:px-20 py-10"
+      style={{
+        backgroundImage: "url('/img/bg-light.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="max-w-lg text-center md:text-left text-white">
+        <h1 className="text-xl md:text-2xl font-bold">
           I'm a Backend Developer & Software Engineer based in West Java.
           <span className="block mt-1">
-            Building <FlipWords words={words} />
-          systems while embracing
+            Building <FlipWords words={words} /> systems while embracing
             every challenge with logic and precision.
           </span>
         </h1>
@@ -31,17 +36,14 @@ export default function AboutMe() {
         </p>
       </div>
 
-      <div className="relative max-w-xs">
+      <div className="relative max-w-xs mt-10 md:mt-0">
         <img
           src="/img/profile.png"
           alt="Profile"
-          className="w-full object-cover rounded-lg shadow-lg brightness-[0.50] contrast-135"
+          className="w-40 md:w-full object-cover rounded-lg shadow-lg brightness-[0.50] contrast-135"
         />
-        <div className="absolute -bottom-20 inset-x-0 bg-gradient-to-t from-black from-70% to-transparent rounded-lg shadow-lg h-40 z-0 items-end">
-          <InfiniteMovingTexts
-            direction="right"
-            speed="slow"
-          />
+        <div className="absolute -bottom-16 inset-x-0 bg-gradient-to-t from-black from-70% to-transparent rounded-lg shadow-lg h-32 md:h-40 z-0 items-end">
+          <InfiniteMovingTexts direction="right" speed="slow" />
         </div>
       </div>
     </div>

@@ -15,10 +15,10 @@ export function ContactMe() {
   const [activeTab, setActiveTab] = useState("social");
 
   return (
-    <div className="max-w-2xl mx-auto mt-5 mb-5">
-      <div className="flex justify-center mb-4">
+    <div className="max-w-lg w-full mx-auto mt-5 mb-5 px-4">
+      <div className="flex flex-wrap justify-center mb-4 gap-2">
         <button
-          className={`px-4 py-2 mx-2 text-lg font-semibold ${
+          className={`px-3 py-2 text-sm sm:text-lg font-semibold ${
             activeTab === "social" ? "border-b-2 border-yellow-500" : ""
           }`}
           onClick={() => setActiveTab("social")}
@@ -26,7 +26,7 @@ export function ContactMe() {
           Contact Me
         </button>
         <button
-          className={`px-4 py-2 mx-2 text-lg font-semibold ${
+          className={`px-3 py-2 text-sm sm:text-lg font-semibold ${
             activeTab === "email" ? "border-b-2 border-yellow-500" : ""
           }`}
           onClick={() => setActiveTab("email")}

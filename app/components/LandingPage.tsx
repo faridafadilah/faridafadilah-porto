@@ -7,7 +7,7 @@ export default function LandingPage() {
   const [isLocked, setIsLocked] = useState(true);
 
   useEffect(() => {
-    window.scrollTo({top: 0, behavior: "smooth"})
+    window.scrollTo({ top: 0, behavior: "smooth" });
     document.body.style.overflow = "hidden";
 
     const timer = setTimeout(() => {
@@ -26,7 +26,7 @@ export default function LandingPage() {
 
   return (
     <div
-      className={`flex items-center justify-center min-h-screen bg-black px-64 sticky top-0
+      className={`flex flex-col items-center justify-center min-h-screen bg-black px-6 md:px-64 sticky top-0 
         ${isLocked ? "pointer-events-none" : "pointer-events-auto"}`}
       style={{
         backgroundImage: "url('/bg-main.png')",
@@ -46,8 +46,8 @@ export default function LandingPage() {
         animate={
           showText
             ? {
-                top: "1.25rem",
-                left: "1.25rem",
+                top: "1rem",
+                left: "1rem",
                 translateX: "0",
                 translateY: "0",
                 scale: 1,
@@ -56,7 +56,7 @@ export default function LandingPage() {
             : {}
         }
         transition={{ duration: 1.5, ease: "easeInOut" }}
-        className="absolute text-white font-light"
+        className="absolute text-white font-light text-sm md:text-base"
       >
         Farida Fadilah
       </motion.p>
@@ -68,13 +68,13 @@ export default function LandingPage() {
           transition={{ duration: 1, delay: 0.5 }}
           className="text-center text-white"
         >
-          <h1 className="text-xl md:text-4xl font-light">
+          <h1 className="text-lg md:text-4xl font-light leading-tight">
             no <span className="italic font-semibold">hug</span> no{" "}
             <span className="italic font-semibold">kiss</span>, only{" "}
             <span className="italic font-semibold">bug</span> and{" "}
             <span className="italic font-semibold">fix</span>
           </h1>
-          <p className="text-sm md:text-base italic mt-2 text-right">
+          <p className="text-xs md:text-base italic mt-2 text-right">
             <span className="font-light">17<sup>th</sup></span> Kickstarted,{" "}
             <span className="font-bold">20<sup>th</sup> My Age</span>
           </p>
@@ -83,32 +83,3 @@ export default function LandingPage() {
     </div>
   );
 }
-
-
-// import { MetaFunction } from "@remix-run/node";
-
-// export const meta: MetaFunction = () => {
-//   return [{ title: "Farida Fadilah - Developer" }];
-// };
-
-// export default function LandingPage() {
-//   return (
-//     <div
-//       className="relative flex items-center justify-start min-h-screen bg-black px-64"
-//       style={{ backgroundImage: "url('/bg-main.png')", backgroundSize: "cover", backgroundPosition: "center" }}
-//     >
-//       <div className="text-center text-white">
-//         <p className="absolute top-5 left-5 text-sm font-light">Farida Fadilah</p>
-//         <h1 className="text-xl md:text-4xl font-light">
-//           no <span className="italic font-semibold">hug</span> no <span className="italic font-semibold">kiss</span>, only{" "}
-//           <span className="italic font-semibold">bug</span> and{" "}
-//           <span className="italic font-semibold">fix</span>
-//         </h1>
-//         <p className="text-sm md:text-base italic mt-2 text-right">
-//           <span className="font-light">17<sup>th</sup></span> Kickstarted,{" "}
-//           <span className="font-bold">20<sup>th</sup> My Age</span>
-//         </p>
-//       </div>
-//     </div>
-//   );
-// }

@@ -37,43 +37,40 @@ const skills = [
     { name: "Vue.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg", animation: { scale: [1, 1.05, 1], transition: { repeat: Infinity, duration: 1.5, ease: "easeInOut" } } },
     { name: "Laravel", logo: "img/laravel.svg", animation: { scale: [1, 1.05, 1], transition: { repeat: Infinity, duration: 1.5, ease: "easeInOut" } } },
   ];
-
+  
 export default function Skill() {
   return (
     <section
-      className="relative flex items-center justify-around min-h-screen py-12 bg-black px-10 md:px-20"
+      className="relative flex items-center justify-center min-h-screen py-12 bg-black px-6 sm:px-10 md:px-20"
       style={{ backgroundColor: "black", backgroundSize: "cover", backgroundPosition: "center" }}
     >
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-4">Skills</h2>
-        <p className="text-gray-400 text-sm mb-6">
-        I've been programming for over three years, gaining experience with a variety of programming languages, frameworks, and tools.
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4">Skills</h2>
+        <p className="text-gray-400 text-sm sm:text-base mb-6">
+          I've been programming for over three years, gaining experience with a variety of programming languages, frameworks, and tools.
           I've worked on both Frontend and Backend technologies, allowing me to understand and contribute to the entire development process.
         </p>
-
-        <motion.div 
-          className="p-6 rounded-lg shadow-lg bg-gray-800/50 backdrop-blur-md"
+  
+        <motion.div
+          className="p-4 sm:p-6 rounded-lg shadow-lg bg-gray-800/50 backdrop-blur-md"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <div className="grid grid-cols-5 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4">
             {skills.map((skill, index) => (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 className="p-2 flex justify-center items-center"
                 animate={skill.animation}
                 whileHover={{ scale: 1.2 }}
               >
                 <FollowerPointerCard
                   title={
-                    <TitleComponent
-                      title={skill.name}
-                      avatar={skill.logo}
-                    />
+                    <TitleComponent title={skill.name} avatar={skill.logo} />
                   }
                 >
-                  <img src={skill.logo} alt={skill.name} className="w-14 h-14" />
+                  <img src={skill.logo} alt={skill.name} className="w-12 sm:w-14 h-12 sm:h-14" />
                 </FollowerPointerCard>
               </motion.div>
             ))}
@@ -81,7 +78,7 @@ export default function Skill() {
         </motion.div>
       </div>
     </section>
-  );
+  );  
   
 }
 
